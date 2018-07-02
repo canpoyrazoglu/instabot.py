@@ -31,10 +31,7 @@ class UserInfo:
     def hello(self):
         self.s = requests.Session()
         self.s.headers.update({'User-Agent': self.user_agent})
-        main = self.s.get(self.url_list[self.i_a]["main"])
-        if main.status_code == 200:
-            return True
-        return False
+        return True
 
     def get_user_id_by_login(self, user_name):
         url_info = self.url_user_info % (user_name)
